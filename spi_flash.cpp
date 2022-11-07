@@ -9,7 +9,7 @@
 #define FLASH_SIZE_INCREASEMENT		(32 << 10)
 #define FLASH_SIZE_SAMPLE_INTERVAL	(4 << 10)
 
-#define DATA_READ_LENGTH			0x8000
+#define DATA_READ_LENGTH			0x20000
 
 #define min(a, b) (((a) > (b)) ? (b) : (a))
 
