@@ -74,12 +74,12 @@ int ch347_spi_read_packet(struct ch347_priv *priv, uint8_t cmd, void *rx, int le
     memcpy(rx, priv->tmpbuf + 3, cur_len);
     rx_received = cur_len;
     while (rx_received < rxlen) {
-        err = libusb_bulk_transfer(priv->handle, CH347_EPIN, priv->tmpbuf, sizeof(priv->tmpbuf), &transferred, 1000);
+        /* The leftover data length is known so we don't need to deal with packet overflow using tmpbuf. */
+        err = libusb_bulk_transfer(priv->handle, CH347_EPIN, rx + rx_received, rxlen - rx_received, &transferred, 1000);
         if (err) {
             fprintf(stderr, "ch347: libusb: failed to receive packet: %d\n", err);
             return err;
         }
-        memcpy(rx + rx_received, priv->tmpbuf, transferred);
         rx_received += transferred;
     }
 
