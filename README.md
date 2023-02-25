@@ -1,3 +1,7 @@
+# DEPRECATED
+
+Checkout this better one by Hackpascal: https://github.com/hackpascal/ufprog
+
 # Simple CH347 SPI-NOR programmer
 
 SPI-NOR programmer software for WCH CH347 USB 2.0 High-speed USB to UART+SPI+I2C bridge using libusb.
