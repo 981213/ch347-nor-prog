@@ -15,3 +15,13 @@ Tested under linux. It should work under Windows with winusb driver installed bu
 The maximum SPI frequency supported by this chip is 60MHz and it can achieve a read speed of about 4950KB/s.
 
 Pretty impressive for a 32CNY board :)
+
+# BUILDING
+
+Building programmer
+
+cd ch347-nor-prog-master
+mkdir build
+cd build
+cmake ..
+make -j4
